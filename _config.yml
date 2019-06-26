@@ -4,12 +4,19 @@
 
 # Site
 title: 大前端拾荒
-subtitle:
+subtitle: 
 description: Get busy living or get busy dying
 keywords:
 author: Victor
 language: zh-Hans
 timezone:
+
+# Social links
+social:
+  GitHub: https://github.com/your-user-name
+social_icons:
+  enable: true
+  GitHub: github
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

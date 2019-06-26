@@ -38,18 +38,20 @@ function printMemoryUsage() {
 
 setInterval(printMemoryUsage, 500);
 ```
-结果如下：<br/>
+结果如下：
+
 | 方式   | rss(MB) | heapTotal(MB) | headUsed(MB) |
 | ------ | ------- | ------------- | ------------ |
 | file   | 107.10  | 12.00         | 7.06         |
 | stream | 58.98   | 12.00         | 7.33         |
+
 看起来显而易见，rss所占的内存在stream的方式下小了很多，rss是驻留集(Resident Set)大小,这个词太难理解了，实际上就是给这个应用分配了多少内存。这里顺便讲讲，v8把内存分成了一下几部分:
 - 代码: 实际被执行的代码
 - 栈(stack): 包含所有类型，对象的引用，说白了就是变量。
 - 堆(head): 空间用于存放对象，字符串，闭包
 
-### 实际使用
-此处我们使用egg工程来模拟一个文件的上传
+### Eggjs中处理上传
+此处我们使用egg工程来模拟一个文件的上传，并且用stream方式接收
 ```js
     const fileStream = await ctx.getFileStream();
 
